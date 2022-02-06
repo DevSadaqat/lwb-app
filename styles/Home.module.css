@@ -3,9 +3,11 @@
 }
 
 .main {
-  min-height: 100vh;
+  /* min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
+  flex: 1; */
+  padding: 4rem 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +31,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: rgb(58, 133, 53);
   text-decoration: none;
 }
 
@@ -51,7 +53,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 1rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
