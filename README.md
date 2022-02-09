@@ -5,9 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Make sure you have node.js installed on your local machine
 
 After downloading the project. First run the follwoing command
-
+```bash
 npm install
-
+```
 then, run the development server:
 
 ```bash
