@@ -1,14 +1,32 @@
 import { useRouter } from 'next/router';
-
+import Favourite from '../../pages/favourite';
+import React, { useState } from "react"
 import Card from '../ui/Card';
 import classes from './ClientItem.module.css';
 
 function ClientItem(props) {
-  const router = useRouter();
+  const [list, setList] = useState([]);
   
-  function showDetailsHandler() {
-    console.log('Added to favpurite list')
+  function favouriteListHandler(props) {
+
+    const  favouriteList = {
+      key: props.id,
+      id: props.id,
+      first_name : props.first_name,
+      last_name: props.last_name,
+      region: props.region
+    }
+      setList((prevList) => {
+         return [favouriteList, ...prevList];
+      }
+     );
+     localStorage.setItem('lists', JSON.stringify(list));
   }
+
+  // if(list.length > 1) {
+  //   localStorage.setItem('list', JSON.stringify(list));
+  //   //  <Favourite list = { list } />
+  // }
 
   return (
     <li className={classes.item}>
@@ -20,11 +38,10 @@ function ClientItem(props) {
           <address>{props.region}</address>
         </div>
         <div className={classes.actions}>
-          <button onClick={showDetailsHandler}>Add to favourite list</button>
+          <button onClick={() => favouriteListHandler(props)}>Add to favourite list</button>
         </div>
       </Card>
     </li>
   );
 }
-
 export default ClientItem;

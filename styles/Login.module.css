@@ -1,14 +1,42 @@
-.loginWrapper {
+.app {
+    /* font-family: sans-serif; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 9em;
+    /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .loginform {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .list-container {
+    display: flex;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.loginButton {
-    margin-top: 1rem;
-}
-
-.errorMsg {
-    color: red;
-    display: none;
-}
+    gap: 8px;
+    margin: 10px;
+  }

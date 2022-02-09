@@ -1,8 +1,9 @@
 import ClientList from "../components/client/ClientList";
 import Layout from "../components/layout/Layout";
 import { useEffect, useState } from "react";
-import { getFeaturedEvents } from '../dummy-data';
 import { getFilteredClients } from '../dummy-data';
+import Greeting from "./greetings";
+import GuestGreeting from "./guest";
 
 const DUMMY_CLIENTS = [
    { 
@@ -28,20 +29,23 @@ function getUsername() {
     return userName
   }
 
-function Clients() {
+function Clients(props) {
     // const [data, setData] = useState(null)
     // const [isLoading, setLoading] = useState(false)
-    const user = getUsername();
-    const feturedClients = getFilteredClients(user);
-    console.log(feturedClients);
-
-    if(user && feturedClients) {
+    if (props.isLoggedIn) {
+        const user = getUsername();
+        const feturedClients = getFilteredClients(user);
         return (
-            <Layout><ClientList clients = { feturedClients } /></Layout>    
+            <Layout><ClientList clients = {feturedClients} /></Layout>    
         );
-    } else {
-        return <h2>Cannot find any data</h2>
-    }
+      }
+      return <GuestGreeting />
+
+    
+       
+
+       
+
 
 //   useEffect(() => {
 //     setLoading(true)

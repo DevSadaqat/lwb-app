@@ -2,9 +2,10 @@ import ClientItem from './ClientItem';
 import classes from './ClientList.module.css';
 
 function ClientList(props) {
+
     return (
       <ul className={classes.list}>
-        {props.clients.map((client) => (
+        {props.clients.map((client) => ( 
           <ClientItem
             key={client.ccdms_id}
             id={client.ccdms_id}
